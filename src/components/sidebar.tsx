@@ -12,25 +12,31 @@ const routes = [
     label: "Dashboard",
     icon: Home,
     href: "/",
-    color: "text-sky-500",
+    color: "text-gray-500",
   },
   {
     label: "Daily Reports",
     icon: Book,
     href: "/reports",
-    color: "text-violet-500",
+    color: "text-gray-500",
   },
   {
     label: "Portfolio",
     icon: Layout,
-    color: "text-pink-700",
+    color: "text-gray-500",
     href: "/portfolio",
   },
   {
     label: "GitHub Activity",
     icon: Github,
-    color: "text-emerald-500",
+    color: "text-gray-500",
     href: "/github",
+  },
+  {
+    label: "blog",
+    icon: Book,
+    color: "text-gray-500",
+    href: "/blog",
   },
 ]
 
@@ -60,17 +66,17 @@ export function Sidebar() {
             </Link>
             <div className="space-y-1">
               {routes.map((route) => (
-                <Link
-                  key={route.href}
-                  href={route.href}
-                  className="text-sm group flex p-3 w-full justify-start font-medium cursor-pointer hover:text-white hover:bg-white/10 rounded-lg transition"
-                  onClick={() => setIsOpen(false)}
-                >
-                  <div className="flex items-center flex-1">
-                    <route.icon className={cn("h-5 w-5 mr-3", route.color)} />
-                    {route.label}
-                  </div>
-                </Link>
+              <Link
+                key={route.href}
+                href={route.href}
+                className="text-sm group flex p-3 w-full justify-start font-medium cursor-pointer hover:text-emerald-500 hover:bg-white/10 rounded-lg transition"
+                onClick={() => setIsOpen(false)}
+              >
+                <div className="flex items-center flex-1">
+                <route.icon className={cn("h-5 w-5 mr-3", route.color, "group-hover:text-emerald-500")} />
+                {route.label}
+                </div>
+              </Link>
               ))}
             </div>
           </div>
