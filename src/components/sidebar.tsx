@@ -6,6 +6,7 @@ import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
 import { useState } from "react"
 
+//サイドバーのリンクを定義
 const routes = [
   {
     label: "Dashboard",
